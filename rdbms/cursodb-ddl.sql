@@ -1,4 +1,4 @@
-$ mysql -u admin -h localhost -p <pass>
+-- $ mysql -u admin -h localhost -p <pass>
 
 CREATE DATABASE cursodb;
 USE cursodb;

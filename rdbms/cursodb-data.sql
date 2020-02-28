@@ -1,4 +1,4 @@
-$ mysql -u curso -h localhost -p curso
+-- $ mysql -u curso -h localhost -p curso
 
 use cursodb;
 insert into employee values (101, 'name1', 1800);
