@@ -29,3 +29,17 @@
         Query OK, 1 row affected (0.00 sec)
         mysql> 
 
+4. entrar a la instancia 'clientmysql', crear la bd 'retail_db' y cargar datos:
+
+        descarga previamente el repo: https://github.com/ceceafit/bigdatati20201.git
+
+        $ git clone https://github.com/ceceafit/bigdatati20201.git
+        $ cd bigdatati20201/rdbms
+
+        como administrador de la base de datos:
+
+        $ mysql -u admin -h database-1.cj1yhistqein.us-east-1.rds.amazonaws.com -p < retail_db-ddl.sql
+
+        como usuario: retail_dba:
+
+        $ mysql -u retail_dba -h database-1.cj1yhistqein.us-east-1.rds.amazonaws.com -p retail_db < retail_db-data.sql
