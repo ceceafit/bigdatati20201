@@ -8,6 +8,10 @@
 2. crear una instancia AWS/RDS de Mysql - free tier (user: admin, password: bigdatati2020!)
 3. entrar a la instancia 'clientmysql' y ejecutar:
 
+
+        ACTUALIZAR EL hostname de la base de datos rds/mysql a la real:
+        actualice: database-1.cj1yhistqein.us-east-1.rds.amazonaws.com
+
         $ sudo yum install mysql -y
 
         $ mysql -u admin –h database-1.cj1yhistqein.us-east-1.rds.amazonaws.com -p
