@@ -95,18 +95,18 @@ SELECT word, count(1) AS count FROM (SELECT explode(split(line,' ')) AS word FRO
 ## Datos en MySQL
 
 ```
-En database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com, se tiene Mysql con:
+En database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com, se tiene Mysql con:
 Base de datos: “cursodb”
 Tabla: “employee” (ya existe una table llamada 'employee')
 User: curso/curso
-$ mysql –u curso -h database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com –p
+$ mysql –u curso -h database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com –p
 Enter password: ******
 mysql> use cursodb;
 
 Base de datos: “retail_db”
 Tabla: <varias>
 User: retail_dba/retail_dba
-$ mysql –u retail_dba -h database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com –p
+$ mysql –u retail_dba -h database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com –p
 Enter password: ******
 mysql> use retail_db;
 
@@ -117,7 +117,7 @@ mysql> use retail_db;
 
 //Transferir datos de una base de datos (tipo mysql) hacia HDFS:
 ```
-$ sqoop import --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/cursodb --username curso --password curso --table employee --target-dir /user/hadoop/employee -m 1
+$ sqoop import --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/cursodb --username curso --password curso --table employee --target-dir /user/hadoop/employee -m 1
 ```
 
 // listar archivos:
@@ -127,25 +127,25 @@ $ hdfs dfs -ls /user/username/mysqlOut
 
 // Crear tabla HIVE a partir de definición tabla Mysql:
 ```
-$ sqoop create-hive-table --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/cursodb --username curso -P --table employee --hive-database mydbhive --hive-table employee -m 1--mysql-delimiters
+$ sqoop create-hive-table --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/cursodb --username curso -P --table employee --hive-database mydbhive --hive-table employee -m 1--mysql-delimiters
 ```
 
 // Transferir datos de una base de datos (tipo mysql) hacia HIVE vía HDFS:
 
 ```
-$ sqoop import --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/cursodb --username curso -P --table employee --hive-import --hive-database mydbhive --hive-table employee -m 1 --mysql-delimiters
+$ sqoop import --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/cursodb --username curso -P --table employee --hive-import --hive-database mydbhive --hive-table employee -m 1 --mysql-delimiters
 ```
 
 // Transferir todas las tablas de una base de datos (tipo mysql) hacia HIVE vía HDFS:
 
 ```
-sqoop import-all-tables --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --warehouse-dir /user/hadoop/retail_db --mysql-delimiters -m 1
+sqoop import-all-tables --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --warehouse-dir /user/hadoop/retail_db --mysql-delimiters -m 1
 
-sqoop import-all-tables --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --warehouse-dir=/tmp/mysqlOut1 --hive-import --mysql-delimiters -m 1 
+sqoop import-all-tables --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --warehouse-dir=/tmp/mysqlOut1 --hive-import --mysql-delimiters -m 1 
 
-sqoop import-all-tables --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database mydbhive --create-hive-table --warehouse-dir=/tmp/mysqlOut1 --hive-import --mysql-delimiters -m 1 
+sqoop import-all-tables --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database mydbhive --create-hive-table --warehouse-dir=/tmp/mysqlOut1 --hive-import --mysql-delimiters -m 1 
 
-sqoop import-all-tables --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database mydbhive --hive-overwrite --warehouse-dir=/tmp/mysqlOut1 --hive-import --mysql-delimiters -m 1 
+sqoop import-all-tables --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database mydbhive --hive-overwrite --warehouse-dir=/tmp/mysqlOut1 --hive-import --mysql-delimiters -m 1 
 ```
 
 
@@ -184,14 +184,14 @@ mysql> CREATE TABLE username_employee2 (  emp_id INT NOT NULL,  name VARCHAR(4
 /user/username/mysql_in/*
 
 ```
-$ sqoop export --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/cursodb --username curso -P --table username_employee2 --export-dir /user/username/mysqlOut
+$ sqoop export --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/cursodb --username curso -P --table username_employee2 --export-dir /user/username/mysqlOut
 ```
 
 ## MySQL vs Hive
 
 ### consulta hecha en MySQL de Promedio de salario de Empleados:
 
-    $ mysql -u -h database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com curso -p
+    $ mysql -u -h database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com curso -p
     password: curso
     mysql> use cursodb;
     mysql> select AVG(salary) from employee;

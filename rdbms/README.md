@@ -10,11 +10,11 @@
 
 
         ACTUALIZAR EL hostname de la base de datos rds/mysql a la real:
-        actualice: database-1.cj1yhistqein.us-east-1.rds.amazonaws.com
+        actualice: database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com
 
         $ sudo yum install mysql -y
 
-        $ mysql -u admin –h database-1.cj1yhistqein.us-east-1.rds.amazonaws.com -p
+        $ mysql -u admin –h database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com -p
         Enter password: bigdatati2020!
         mysql> create database cursodb;
         mysql> use cursodb;
@@ -22,7 +22,7 @@
         mysql> CREATE USER 'curso'@'%' IDENTIFIED BY 'curso';
         mysql> GRANT ALL PRIVILEGES ON cursodb.* TO 'curso'@'%';
 
-        $ mysql –u curso –h database-1.cj1yhistqein.us-east-1.rds.amazonaws.com –p
+        $ mysql –u curso –h database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com –p
         Enter password: curso
         mysql> use cursodb;
         mysql> insert into employee values (101, 'name1', 1800);
@@ -42,8 +42,8 @@
 
         como administrador de la base de datos:
 
-        $ mysql -u admin -h database-1.cj1yhistqein.us-east-1.rds.amazonaws.com -p < retail_db-ddl.sql
+        $ mysql -u admin -h database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com -p < retail_db-ddl.sql
 
         como usuario: retail_dba:
 
-        $ mysql -u retail_dba -h database-1.cj1yhistqein.us-east-1.rds.amazonaws.com -p retail_db < retail_db-data.sql
+        $ mysql -u retail_dba -h database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com -p retail_db < retail_db-data.sql

@@ -10,18 +10,18 @@
 -- datos de conexión:
 
 Mysql
-host: database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com
+host: database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com
 Database: retail_db
 Username: retail_dba
 Password: retail_dba
 
 -- importar datos via sqoop por Terminal:
 
-$ sqoop import-all-tables --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database retail_db --hive-overwrite --hive-import --warehouse-dir=/tmp/retail_dbtmp -m 1 --mysql-delimiters
+$ sqoop import-all-tables --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database retail_db --hive-overwrite --hive-import --warehouse-dir=/tmp/retail_dbtmp -m 1 --mysql-delimiters
 
 -- importar datos via sqoop por HUE:
 
-import-all-tables --connect jdbc:mysql://database-1.c1ljn42bwdgj.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database retail_db --hive-overwrite --hive-import --warehouse-dir=/tmp/retail_dbtmp -m 1 --mysql-delimiters
+import-all-tables --connect jdbc:mysql://database-1.cnbbrpjrbacg.us-east-1.rds.amazonaws.com:3306/retail_db --username=retail_dba --password=retail_dba --hive-database retail_db --hive-overwrite --hive-import --warehouse-dir=/tmp/retail_dbtmp -m 1 --mysql-delimiters
 
 -- CATEGORIAS MÁS POPULARES DE PRODUCTOS
 
