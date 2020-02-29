@@ -37,7 +37,7 @@ Nota: reemplace 'hadoop' por aca usuario asignado
 
 Se asume que tiene los datos LOCALES se encuentran en /datasets en el gateway
 También están en este github, y por terminal debería copiarlos por SSH/SCP al servidor Gateway por la VPN.
-También están en Amazon S3:      s3://emontoyapublic/datasets
+También están en Amazon S3:      s3://cursopublic/datasets
 
     user@master$ hdfs dfs -mkdir /user/hadoop/datasets
     user@master$ hdfs dfs -mkdir /user/hadoop/datasets/gutenberg-small
@@ -48,9 +48,9 @@ También están en Amazon S3:      s3://emontoyapublic/datasets
 
 * archivos en Amazon s3:
 
-    user@master$ hadoop distcp s3://emontoyapublic/datasets/airlines.csv /tmp/
+    user@master$ hadoop distcp s3://cursopublic/datasets/airlines.csv /tmp/
 
-    user@master$ hadoop distcp /user/hadoop/retail_db/* s3://emontoyapublic/retail_db/
+    user@master$ hadoop distcp /user/hadoop/retail_db/* s3://cursopublic/retail_db/
 
 
 
