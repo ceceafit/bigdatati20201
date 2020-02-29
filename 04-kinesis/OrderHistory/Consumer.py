@@ -8,12 +8,12 @@ import decimal
 # Kinesis setup
 kinesis = boto3.client("kinesis")
 shard_id = "shardId-000000000000" 
-pre_shard_it = kinesis.get_shard_iterator(StreamName="CadabraOrders", ShardId=shard_id, ShardIteratorType="LATEST")
+pre_shard_it = kinesis.get_shard_iterator(StreamName="acmecoOrders", ShardId=shard_id, ShardIteratorType="LATEST")
 shard_it = pre_shard_it["ShardIterator"]
 
 # DynamoDB setup
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('CadabraOrders')
+table = dynamodb.Table('acmecoOrders')
 
 while 1==1:
 	out = kinesis.get_records(ShardIterator=shard_it, Limit=100)
