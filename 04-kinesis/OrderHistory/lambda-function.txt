@@ -6,7 +6,7 @@ import decimal
 def lambda_handler(event, context):
     item = None
     dynamo_db = boto3.resource('dynamodb')
-    table = dynamo_db.Table('CadabraOrders')
+    table = dynamo_db.Table('acmecoOrders')
     decoded_record_data = [base64.b64decode(record['kinesis']['data']) for record in event['Records']]
     deserialized_data = [json.loads(decoded_record) for decoded_record in decoded_record_data]
 
